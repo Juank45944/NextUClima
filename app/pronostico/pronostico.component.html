@@ -1,0 +1,26 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+
+<StackLayout class="page">
+    <WrapLayout orientation="vertical" width="250" height="auto">
+        <Label class="h2" text="Ciudad más cercana: "></Label>
+        <Label class="h3" [text]="ciudadCercana.title"></Label>
+    </WrapLayout>
+    <ListView [items]="pronostico" class="list-group" height="500">
+        <ng-template let-item="item">
+            <GridLayout rows="auto, auto, auto, auto" columns="80, 100, *" class="list-group-item">
+                <Label class="h3" text="Fecha:" row="0" col="0"></Label>
+                <Label class="h3" [text]="item.applicable_date" row="0" col="1"></Label>
+                <Label text="Temp Min:" row="1" col="0"></Label>
+                <Label text="{{item.min_temp | number: '2.1-1'}} ºC" row="1" col="1"></Label>
+                <Label text="Temp Max:" row="2" col="0"></Label>
+                <Label text="{{item.max_temp | number: '2.1-1'}} ºC" row="2" col="1"></Label>
+                <Label text="Humedad:" row="3" col="0"></Label>
+                <Label [text]="item.humidity+'%'" row="3" col="1"></Label>
+                <Image width="70" height="100" src="https://www.metaweather.com/static/img/weather/png/{{item.weather_state_abbr}}.png"
+                    rowSpan="4" row="0" col="2"></Image>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>
