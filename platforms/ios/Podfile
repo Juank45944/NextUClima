@@ -1,0 +1,10 @@
+use_frameworks!
+
+target "Clima" do
+# Begin Podfile - /Users/integ.ro/Documents/Codigo/nativeScript_proyectos/Clima/node_modules/nativescript-google-maps-sdk/platforms/ios/Podfile 
+ source 'https://github.com/CocoaPods/Specs.git'
+
+pod 'GoogleMaps' 
+ # End Podfile 
+
+end

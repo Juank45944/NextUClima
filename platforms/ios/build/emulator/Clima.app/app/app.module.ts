@@ -6,6 +6,14 @@ import { NativeScriptHttpModule } from "nativescript-angular/http";
 
 import { datosClimaService } from "./datosClima.service";
 import { PronosticoComponent } from "./pronostico/pronostico.component";
+import { InicioComponent } from "./inicio/inicio.component";
+
+import * as platform from "platform";
+declare var GMSServices: any;
+
+if (platform.isIOS) { 
+  GMSServices.provideAPIKey("AIzaSyCaIPUM_McACuLaUoyvc-RXR8S_JQHclnw");
+}
 
 @NgModule({
     bootstrap: [
@@ -18,7 +26,8 @@ import { PronosticoComponent } from "./pronostico/pronostico.component";
     ],
     declarations: [
         AppComponent,
-        PronosticoComponent
+        PronosticoComponent,
+        InicioComponent
     ],
     providers: [
         datosClimaService

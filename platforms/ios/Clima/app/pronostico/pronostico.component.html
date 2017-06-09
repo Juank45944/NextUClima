@@ -5,7 +5,7 @@
 <StackLayout class="page">
     <WrapLayout orientation="vertical" width="250" height="auto">
         <Label class="h2" text="Ciudad más cercana: "></Label>
-        <Label class="h3" [text]="ciudadCercana.title"></Label>
+        <Label class="h3" [text]="ciudadCercana"></Label>
     </WrapLayout>
     <ListView [items]="pronostico" class="list-group" height="500">
         <ng-template let-item="item">

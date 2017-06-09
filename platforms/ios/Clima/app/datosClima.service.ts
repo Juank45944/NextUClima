@@ -6,8 +6,9 @@ import 'rxjs/Rx';
 @Injectable()
 export class datosClimaService {
     url: string;
-    location : Array<number> = [40.771520, -73.973965]; 
+    location : Array<number> = [0, 0]; 
     woeid : string;
+    ciudadCercana :string;
 
     constructor(private http: Http){
 
@@ -15,7 +16,7 @@ export class datosClimaService {
 
     getCiudadCercana(){
         this.url = 'https://www.metaweather.com/api/location/search/?lattlong='+this.location[0]+','+this.location[1];
-        console.log(this.url)
+        console.log(this.ciudadCercana)
         return this.http.get(this.url).map(res=>res.json());
     }
 

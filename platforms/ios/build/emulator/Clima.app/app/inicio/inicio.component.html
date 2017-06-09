@@ -1,0 +1,14 @@
+<ActionBar title="Inicio">
+</ActionBar>
+
+<GridLayout>
+    <MapView #mapView [latitude]="miUbicacion.latitud" [longitude]="miUbicacion.longitud"
+             zoom="8" bearing="0"
+             tilt="0" i-padding="50,50,50,50" padding="40, 40, 40, 40" (mapReady)="onMapReady($event)"
+             ></MapView>
+    <StackLayout orientation="vertical" backgroundColor="lightgray">
+        <Button class="btn btn-primary" text="Ubicarme" (tap)="ubicarme()"></Button>
+        <Button class="btn btn-primary" text="Encontrar ciudad más cercana" (tap)="ubicarCiudadCercana()"></Button>
+        <Button class="btn btn-primary" text="Ver pronóstico" routerLink="/pronostico"></Button>
+    </StackLayout>
+</GridLayout>

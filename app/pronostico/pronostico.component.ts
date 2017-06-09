@@ -9,9 +9,7 @@ import { datosClimaService } from "../datosClima.service";
 })
 export class PronosticoComponent implements OnInit {
 
-    ciudadCercana:any = {
-        title: ""
-    };
+    ciudadCercana:string;
     pronostico:any = [
         {
             applicable_date: "",
@@ -25,24 +23,14 @@ export class PronosticoComponent implements OnInit {
     constructor(private datosClima: datosClimaService) { }
 
     ngOnInit(): void {
-        this.loadPronosticos();
+        this.pronosticoCiudad();
     }
 
-    loadPronosticos(){
-        this.datosClima.getCiudadCercana()
-            .subscribe(res=>{
-                this.pronosticoCiudad(res);
-            }, err=>{
-                console.log(err);
-            })
-    }
-
-    pronosticoCiudad(res){
-        this.ciudadCercana = res[0];
-        this.datosClima.woeid = this.ciudadCercana.woeid;
+    pronosticoCiudad(){  
         this.datosClima.getPronostico()
             .subscribe(res=>{
                 this.pronostico = res.consolidated_weather;
+                this.ciudadCercana = res.title;
             }, err=>{
                 console.log(err)
             })

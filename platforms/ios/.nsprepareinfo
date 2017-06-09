@@ -1,7 +1,7 @@
 {
-	"time": "Wed Jun 07 2017 12:01:29 GMT-0500 (COT)",
+	"time": "Thu Jun 08 2017 14:32:43 GMT-0500 (COT)",
 	"bundle": false,
 	"release": false,
-	"changesRequireBuild": true,
-	"changesRequireBuildTime": "Wed Jun 07 2017 12:01:29 GMT-0500 (COT)"
+	"changesRequireBuild": false,
+	"changesRequireBuildTime": "Thu Jun 08 2017 12:03:11 GMT-0500 (COT)"
 }

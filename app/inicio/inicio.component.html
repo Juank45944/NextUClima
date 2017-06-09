@@ -1,0 +1,14 @@
+<ActionBar title="Inicio">
+</ActionBar>
+
+<StackLayout orientation="vertical">
+    <GridLayout height="550">
+        <MapView #mapView [latitude]="miUbicacion.latitud" [longitude]="miUbicacion.longitud" [zoom]="miUbicacion.zoom" [bearing]="miUbicacion.bearing"
+            [tilt]="miUbicacion.tilt" i-padding="50,50,50,50" [padding]="miUbicacion.padding" (mapReady)="onMapReady($event)"></MapView>
+    </GridLayout>
+
+    <Button *ngIf="buttonsFlag=='sin_ubicar'" class="btn btn-primary" text="Ubicarme" (tap)="ubicarme()"></Button>
+    <Button *ngIf="buttonsFlag=='sin_cercana'" class="btn btn-primary" text="Encontrar ciudad más cercana" (tap)="ubicarCiudadCercana()"></Button>
+    <Button *ngIf="buttonsFlag=='sin_pronostico'" class="btn btn-primary" text="Ver pronóstico" [nsRouterLink]="['/pronostico']"></Button>
+
+</StackLayout>
